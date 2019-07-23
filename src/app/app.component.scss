@@ -1,0 +1,33 @@
+input {
+  width: 100%;
+  font-size: .7rem;
+  border: none;
+  outline: none;
+}
+
+ul {
+  margin: .5rem 0 0;
+
+  li {
+    font-size: .7rem;
+
+    &.exec {
+      color: green;
+    }
+
+    &.err {
+      color: darkorange;
+    }
+  }
+}
+
+span {
+  font-size: 3rem;
+  color: darkred;
+}
+
+img {
+  width: 8rem;
+  border: 1px solid black;
+  margin: 2px;
+}
