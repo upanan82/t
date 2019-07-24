@@ -66,13 +66,13 @@ export const test: ITest[] = [
         ]
     },
     {
-        question: 'Структурна декомпозиції продукту', // error
+        question: 'Структурна декомпозиція продукту',
         answer: [
             'дерево, що показує ієрархічність результатів проекту'
         ]
     },
     {
-        question: 'Структурна декомпозиції робіт', // error
+        question: 'Структурна декомпозиція робіт',
         answer: [
             'дерево, що показує розподіл завдань необхідних для досягнення цілі'
         ]
@@ -214,13 +214,13 @@ export const test: ITest[] = [
         ]
     },
     {
-        question: 'Інструментальні засоби розробки програмного забезпечення ( це', // error
+        question: 'Інструментальні засоби розробки програмного забезпечення - це',
         answer: [
             'засоби підтримки кодування і тестування (компілятори, генератори програм, отладчики і ін)'
         ]
     },
     {
-        question: 'Теоретичні засоби розробки програмного забезпечення  це', // error
+        question: 'Теоретичні засоби розробки програмного забезпечення - це',
         answer: [
             'методи верифікації та докази правильності специфікації програм'
         ]
@@ -342,7 +342,7 @@ export const test: ITest[] = [
         ]
     },
     {
-        question: 'Реінженерія  - це',
+        question: 'Реінженерія - це',
         answer: [
             'удосконалення застарілого ПЗ шляхом його реорганізації або реструктуризації, а також перепрограмування окремих елементів або настроювання параметрів на іншу платформу, середовище виконання зі збереженням зручності його супроводу'
         ]
@@ -525,7 +525,7 @@ export const test: ITest[] = [
     {
         question: 'Супроводжуванність - це',
         answer: [
-            'група властивостей, що визначає зусилля, необхідні для виконання, пристосованість до діагностики відмов і наслідків внесення змін, модифікації і атестації модифікується програмного забезпечення'
+            'група властивостей, що характеризує можливість програмного забезпечення бути модифікованим для його виправлення, поліпшення або адаптації ПЗ до зміни в середовищі, вимогах або функціональних специфікаціях'
         ]
     }, {
         question: 'Раціональність (ефективність) - це',
@@ -645,7 +645,7 @@ export const test: ITest[] = [
    */
 
   {
-    question: 'Виберіть визначення  2-ий нормальної форми',
+    question: 'Виберіть визначення 2-ої нормальної форми',
     answer: [
       'відношення знаходиться в 2-йнормальной формі, якщо воно знаходиться в 1-ій нормальній формі і немає функціональних залежностей між неключових атрибутами і частини первинного ключа'
     ]
@@ -683,7 +683,7 @@ export const test: ITest[] = [
   {
     question: 'Виберіть правильні визначення ключів таблиці, вся команда Create table повинна бути правильною',
     answer: [
-      'Create table B(a1 integer, b1 integer references A(a2),  PRIMARY KEY(a1,b1))',
+      'Create table B(a1 integer, b1 integer references A(a2), PRIMARY KEY(a1,b1))',
       'Create table D(d1 CHAR(10), d2 VARCHAR(5), PRIMARY KEY(d1,d2))'
     ]
   },
@@ -720,7 +720,19 @@ export const test: ITest[] = [
     ]
   },
   {
+    question: 'SELECT * FROM Student GROUP BY group_id ORDER BY group_id',
+    answer: [
+      'помилка між ключовими словами SELECT і FROM'
+    ]
+  },
+  {
     question: 'SELECT group_id FROM Student WHERE COUNT(student_id) > 5 GROUP BY group_id',
+    answer: [
+      'помилка після ключового слова WHERE'
+    ]
+  },
+  {
+    question: 'SELECT group_name FROM SGroup WHERE group_id IN (SELECT group_id FROM Student GROUP BY group_id HAVING COUNT(student_id) > 5 ORDER BY group_id)',
     answer: [
       'помилка після ключового слова WHERE'
     ]
@@ -732,7 +744,7 @@ export const test: ITest[] = [
     ]
   },
   {
-    question: 'SELECT student_id, group_id FROM Student st, SGroup gr  WHERE st.group_id = gr.group_id',
+    question: 'SELECT student_id, group_id FROM Student st, SGroup gr WHERE st.group_id = gr.group_id',
     answer: [
       'помилка SELECT student_id, group_id'
     ]
@@ -740,7 +752,7 @@ export const test: ITest[] = [
   {
     question: 'SELECT firstname, groupname FROM SGroup gr INNER JOIN Student as st ON Group.group_id = Student.group_id;',
     answer: [
-      'ошибка INLINE JOIN'
+      'ошибка INNER JOIN'
     ]
   },
   {
@@ -750,7 +762,7 @@ export const test: ITest[] = [
     ]
   },
   {
-    question: 'SELECT student_id FROM Student WHERE ocenka IN (SELECT MAX(ocenka) FROM Student WHERE group_id = 101)',
+    question: 'SELECT student_id FROM Student WHERE ocenka = (SELECT MAX(ocenka) FROM Student WHERE group_id = 101)',
     answer: [
       'помилки в запиті немає'
     ]
