@@ -744,6 +744,12 @@ export const test: ITest[] = [
     ]
   },
   {
+    question: 'SELECT gname FROM sgroup WHERE grid IN (SELECT grid FROM Student GROUP BY grid HAVING COUNT(stid) > 5) ORDER BY gname',
+    answer: [
+      'помилки в запиті немає'
+    ]
+  },
+  {
     question: 'SELECT student_id, group_id FROM Student st, SGroup gr WHERE st.group_id = gr.group_id',
     answer: [
       'помилка SELECT student_id, group_id'
