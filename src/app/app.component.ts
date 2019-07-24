@@ -54,7 +54,9 @@ export class AppComponent {
   }
 
   public set searchText(val: string) {
-    this._searchText = val.trim();
+    const value = this.removeLastSymbol(val.trim());
+
+    this._searchText = value;
 
     if (!!val) {
       this.search();
@@ -106,5 +108,16 @@ export class AppComponent {
     await setTimeout(() => {
       this.input.nativeElement.focus();
     }, 0);
+  }
+
+  private removeLastSymbol(value: string): string {
+    const last = value[value.length - 1];
+    let result = value;
+
+    if (last === ':' || last === '?' || last === '.') {
+      result = value.substring(0, value.length - 1);
+    }
+
+    return result;
   }
 }
