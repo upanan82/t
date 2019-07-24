@@ -118,6 +118,6 @@ export class AppComponent {
       result = value.substring(0, value.length - 1);
     }
 
-    return result;
+    return result.trim();
   }
 }
