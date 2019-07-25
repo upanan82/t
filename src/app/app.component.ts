@@ -18,6 +18,8 @@ export class AppComponent {
 
   public images = images;
 
+  public allRes = test;
+
   public dblShow = false;
 
   private fuse: Fuse<ITest, Fuse.FuseOptions<ITest>> = null;

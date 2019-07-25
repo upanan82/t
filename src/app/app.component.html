@@ -6,3 +6,11 @@
 <div *ngIf="dblShow">
   <img *ngFor="let img of images" src="{{img}}" />
 </div>
+<div *ngIf="dblShow">
+<div *ngFor="let res of allRes">
+    <p>{{res.question}}</p>
+  <ul>
+      <li *ngFor="let ans of res.answer">{{ans}}</li>
+  </ul>
+</div>
+</div>
